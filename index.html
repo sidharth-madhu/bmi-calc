@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BMI Calculator</h1>
+        </div>
+        <div class="calculator">
+            <div class="toggle-container">
+                <label class="toggle-label">
+                    Metric
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="measurement-toggle">
+                        <span class="slider"></span>
+                    </div>
+                    US
+                </label>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter your age">
+            </div>
+            <div class="input-group">
+                <label for="gender">Gender</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="male" id="gender-male">
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female" id="gender-female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="height">Height</label>
+                <input type="number" id="height" placeholder="Enter your height in cm">
+            </div>
+            <div class="input-group">
+                <label for="weight">Weight</label>
+                <input type="number" id="weight" placeholder="Enter your weight in kg">
+            </div>
+            <button onclick="calculateBMI()">Calculate BMI</button>
+            <div id="result" class="result">
+                <p>Your BMI: <span id="bmi-value"></span></p>
+                <p>Status: <span id="bmi-status"></span></p>
+            </div>
+            <div class="figure-container">
+                <img id="bmi-figure" class="bmi-figure hidden" src="" alt="BMI Figure">
+            </div>
+            <p id="funny-quote" class="funny-quote"></p>
+            <div class="facts-container">
+                <p id="bmi-fact" class="bmi-fact"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

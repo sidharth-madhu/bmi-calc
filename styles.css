@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    margin: 30px;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease, padding 0.3s ease, height 0.3s ease;
+}
+
+.container.reduced {
+    padding: 30px;
+    height: 800px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.calculator {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+input[type="number"], select {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+    text-align: center;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #007BFF;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 14px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.result:hover {
+    background-color: #e0f7fa;
+}
+
+.result p {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+#bmi-value {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+#bmi-status {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.figure-container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bmi-figure {
+    width: 80px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.hidden {
+    display: none;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.8s ease forwards;
+}
+
+.funny-quote, .bmi-fact {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.bmi-fact {
+    margin-top: 5px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin: 0 10px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    width: 100%;
+    justify-content: center;
+}
+
+.slider-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    color: #555;
+}
